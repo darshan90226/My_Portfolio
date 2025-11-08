@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darshan | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      color: white;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #302b63);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      line-height: 1.6;
+    }
+
+    .container {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeSlide 1s ease-out forwards;
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: #ddd;
+      opacity: 0;
+      animation: fadeSlide 1s ease-out forwards;
+      animation-delay: 0.5s;
+      margin-top: 10px;
+    }
+
+    p {
+      margin: 20px 0;
+      font-size: 1rem;
+      color: #aaa;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .socials {
+      margin-top: 30px;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 1.6rem;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      opacity: 0;
+      animation: fadeSlide 1s ease forwards;
+    }
+
+    .socials a:nth-child(1) { animation-delay: 0.8s; }
+    .socials a:nth-child(2) { animation-delay: 1s; }
+    .socials a:nth-child(3) { animation-delay: 1.2s; }
+
+    .socials a:hover {
+      transform: scale(1.3) rotate(5deg);
+      color: #1DA1F2;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    #about h2, #projects h2 {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    #about p, #projects p {
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hi, I'm Darshan 👋</h1>
+    <h2>Front-End Developer | Designer | Creator</h2>
+    <p>Welcome to my portfolio! Explore my projects and see how I build interactive and modern web experiences with HTML, CSS, and JavaScript.</p>
+
+    <div class="socials">
+      <a href="https://linkedin.com/in/darshan-thakare-b13a6225a" target="_blank">LinkedIn 🌐</a>
+      <a href="https://github.com/darshan90226" target="_blank">GitHub 🐱</a>
+      <a href="https://x.com/Darshan27037383" target="_blank">X 🐦</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Thanks for visiting my portfolio! I'm Darshan, a B.Sc. (Computer Science) student. I enjoy turning ideas into interactive web experiences and learning new technologies every day.</p>
+    <p>My focus is on building modern, responsive websites using HTML, CSS, and JavaScript. I aim to combine creativity with clean, efficient code to create web pages that are both functional and visually appealing.</p>
+    <p>Feel free to explore my projects, connect with me on social media, or reach out if you'd like to collaborate!</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p><strong>Smart Dustbin (Group Project):</strong> IoT system that automatically opens when a person approaches and closes when they move away.</p>
+    <p><strong>Password Generator:</strong> Python program that generates secure, random passwords based on user-defined criteria.</p>
+  </section>
+
+</body>
+</html>
