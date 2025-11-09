@@ -11,7 +11,7 @@
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
-
+    
     body {
       color: white;
       background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #302b63);
@@ -24,6 +24,7 @@
       text-align: center;
       padding: 80px 20px;
     }
+    
 
     h1 {
       font-size: 3rem;
@@ -36,7 +37,7 @@
     h2 {
       font-weight: 300;
       font-size: 1.5rem;
-      color: #ddd;
+      color: #dddddd;
       opacity: 0;
       animation: fadeSlide 1s ease-out forwards;
       animation-delay: 0.5s;
@@ -103,6 +104,28 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    .socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+a {
+  flex: 1;
+  background-color: #333333;
+  color: white;
+  border: 1px solid;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+a:hover,
+a:focus {
+  background-color: white;
+  color: #333333;
+}
+    
 
   </style>
 </head>
@@ -112,13 +135,15 @@
     <h1>Hi, I'm Darshan 👋</h1>
     <h2>Front-End Developer | Designer | Creator</h2>
     <p>Welcome to my portfolio! Explore my projects and see how I build interactive and modern web experiences with HTML, CSS, and JavaScript.</p>
-
+     <br>
+     <br>
     <div class="socials">
       <a href="https://linkedin.com/in/darshan-thakare-b13a6225a" target="_blank">LinkedIn 🌐</a>
       <a href="https://github.com/darshan90226" target="_blank">GitHub 🐱</a>
-      <a href="https://x.com/Darshan27037383" target="_blank">X 🐦</a>
+      <a href="https://x.com/Darshan27037383" target="_blank">X(Twitter)🐦</a>
     </div>
   </div>
+ 
 
   <section id="about">
     <h2>About Me</h2>
