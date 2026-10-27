@@ -3,6 +3,301 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darshan Thakare | Web Developer</title>
+  <meta name="description" content="Portfolio of Darshan Thakare, a B.Sc. Computer Science graduate building web applications with React, Node.js and PostgreSQL.">
+  <meta name="theme-color" content="#0f0c29">
+  <meta property="og:title" content="Darshan Thakare | Web Developer">
+  <meta property="og:description" content="Web applications built with React, Node.js, Express and PostgreSQL. See my projects and get in touch.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a00'/%3E%3Cstop offset='1' stop-color='%23e52e71'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='700' text-anchor='middle' fill='%231a1033'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --midnight: #0f0c29;
+      --indigo: #302b63;
+      --dusk: #24243e;
+      --ember: linear-gradient(90deg, #ff8a00, #e52e71);
+      --text: #f4f3ff;
+      --muted: #cbcae3;
+      --line: rgba(255, 255, 255, 0.14);
+      --panel: rgba(255, 255, 255, 0.06);
+      --chip: rgba(255, 255, 255, 0.09);
+      --ink: #1a1033;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: linear-gradient(-45deg, var(--midnight), var(--indigo), var(--dusk), var(--indigo));
+      background-size: 400% 400%;
+      animation: drift 18s ease infinite;
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible, .btn:focus-visible {
+      outline: 2px solid #ffb35c;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Navigation ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 12, 41, 0.74);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+    .brand { font-weight: 600; text-decoration: none; }
+    .nav ul { display: flex; gap: 22px; list-style: none; flex-wrap: wrap; }
+    .nav ul a { text-decoration: none; color: var(--muted); font-size: 0.92rem; transition: color .2s; }
+    .nav ul a:hover { color: #fff; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 88px 0 64px; animation: rise .9s ease-out both; }
+    .status { display: inline-flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); margin-bottom: 22px; }
+    .status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #3ddc97; box-shadow: 0 0 0 4px rgba(61, 220, 151, 0.18); }
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 3.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      background: var(--ember);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      padding-bottom: 6px;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .role { font-size: clamp(1.05rem, 2.6vw, 1.3rem); font-weight: 400; color: #e8e6ff; margin-top: 10px; }
+    .intro { max-width: 58ch; color: var(--muted); margin-top: 20px; font-size: 1.02rem; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      display: inline-block; padding: 11px 22px; border-radius: 999px;
+      font-size: 0.93rem; font-weight: 500; text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3); color: var(--text);
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.5); }
+    .btn.primary { background: var(--ember); color: var(--ink); border-color: transparent; font-weight: 600; }
+    .btn.primary:hover { transform: translateY(-2px); }
+
+    /* ---------- Sections ---------- */
+    section { padding: 60px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 1.65rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 22px; }
+    .about p { max-width: 64ch; color: var(--muted); margin-bottom: 16px; }
+
+    dl.facts, dl.skills { display: grid; grid-template-columns: 11rem 1fr; gap: 14px 24px; margin-top: 28px; }
+    dl.facts dt, dl.skills dt { font-weight: 500; color: var(--text); }
+    dl.facts dd, dl.skills dd { color: var(--muted); }
+    dl.skills { margin-top: 0; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+    .chips li { background: var(--chip); border: 1px solid var(--line); border-radius: 8px; padding: 3px 11px; font-size: 0.85rem; color: #e6e5f7; }
+
+    /* ---------- Projects ---------- */
+    .featured {
+      background: var(--panel); border: 1px solid rgba(255, 138, 0, 0.45);
+      border-radius: 18px; padding: 32px; margin-bottom: 12px;
+    }
+    .badge { display: inline-block; font-size: 0.82rem; font-weight: 500; color: var(--ink); background: var(--ember); padding: 2px 12px; border-radius: 999px; margin-bottom: 14px; }
+    .featured h3 { font-size: 1.55rem; font-weight: 600; letter-spacing: -0.01em; }
+    .featured p { color: var(--muted); max-width: 62ch; margin: 10px 0 18px; }
+    .featured ul.points { color: var(--muted); max-width: 62ch; margin: 0 0 20px 1.1rem; }
+    .featured ul.points li { margin-bottom: 6px; }
+    .note { font-size: 0.85rem; color: #aeacc9; margin-top: 14px; }
+
+    .project { padding: 26px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 8px 24px; align-items: start; }
+    .project:first-of-type { border-top: 0; }
+    .project h3 { font-size: 1.15rem; font-weight: 600; }
+    .project p { grid-column: 1; color: var(--muted); max-width: 60ch; }
+    .project .chips { grid-column: 1; margin-top: 6px; }
+    .project .links { grid-column: 2; grid-row: 1; display: flex; gap: 16px; font-size: 0.92rem; }
+    .links a, .featured .links a { color: #ffb35c; text-underline-offset: 4px; }
+    .links a:hover { color: #fff; }
+
+    .more-title { font-size: 1.05rem; font-weight: 500; color: var(--muted); margin: 36px 0 4px; }
+
+    /* ---------- Contact / footer ---------- */
+    .contact p { max-width: 56ch; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: #aeacc9; font-size: 0.88rem; }
+
+    @keyframes drift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 640px) {
+      .hero { padding: 56px 0 44px; }
+      dl.facts, dl.skills { grid-template-columns: 1fr; gap: 4px; }
+      dl.facts dd, dl.skills dd { margin-bottom: 14px; }
+      .featured { padding: 24px 20px; }
+      .project { grid-template-columns: 1fr; }
+      .project .links { grid-column: 1; grid-row: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body, .hero { animation: none; }
+      .btn, .nav ul a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">Darshan Thakare</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+
+      <div class="hero">
+        <p class="status">Open to entry-level developer roles</p>
+        <h1>Hi, I’m Darshan</h1>
+        <p class="role">Web developer building with React, Node.js and PostgreSQL</p>
+        <p class="intro">I’m a B.Sc. Computer Science graduate who builds responsive, user-friendly web applications, from the interface to the API and the database.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="https://github.com/darshan90226" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/darshan-thakare/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="https://x.com/Darshan27037383" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        </div>
+      </div>
+
+      <section id="about" class="about">
+        <h2>About me</h2>
+        <p>I’m a Computer Science graduate (B.Sc., 2025) who enjoys turning ideas into working web applications. I build clean, responsive interfaces with HTML, CSS, JavaScript and React, and I’m growing into full-stack development with Node.js, Express and PostgreSQL.</p>
+        <p>My most recent project, UIDrop, is a full-stack app with a REST API, a database, an admin approval workflow and automated deployment. Building and shipping it taught me how the frontend, backend and hosting fit together, and how to debug problems along the way.</p>
+        <p>I’m looking for an entry-level Software or Web Developer role where I can contribute to a team, write clear code and keep learning.</p>
+
+        <dl class="facts">
+          <dt>Education</dt>
+          <dd>B.Sc. Computer Science, Shri Shivaji Science College, Amravati (2022 to 2025)</dd>
+          <dt>Focus</dt>
+          <dd>Front-end development, moving into full-stack</dd>
+          <dt>Currently learning</dt>
+          <dd>Authentication, API security and advanced PostgreSQL</dd>
+        </dl>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <dt>Languages</dt>
+          <dd><ul class="chips"><li>JavaScript (ES6+)</li><li>Python</li><li>SQL</li></ul></dd>
+          <dt>Frontend</dt>
+          <dd><ul class="chips"><li>React.js</li><li>Vite</li><li>HTML5</li><li>CSS3</li><li>Bootstrap</li><li>Tailwind CSS</li><li>Responsive design</li></ul></dd>
+          <dt>Backend and database (basic)</dt>
+          <dd><ul class="chips"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>PostgreSQL</li><li>Prisma ORM</li></ul></dd>
+          <dt>Tools and deployment</dt>
+          <dd><ul class="chips"><li>Git</li><li>GitHub</li><li>GitHub Actions</li><li>GitHub Pages</li><li>Render</li><li>Neon</li><li>npm</li><li>VS Code</li></ul></dd>
+        </dl>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <article class="featured">
+          <span class="badge">Featured full-stack project</span>
+          <h3>UIDrop</h3>
+          <p>A UI component library where developers browse, customize and copy components. Anyone can submit a component, and an admin approves it before it goes public.</p>
+          <ul class="points">
+            <li>React and Vite frontend with search, category filters, a live customizer, favorites and light/dark theme.</li>
+            <li>Express REST API with Zod validation, rate limiting and a token-protected admin panel.</li>
+            <li>PostgreSQL on Neon with Prisma; frontend on GitHub Pages via GitHub Actions, API on Render.</li>
+          </ul>
+          <ul class="chips">
+            <li>React</li><li>Vite</li><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li><li>GitHub Actions</li>
+          </ul>
+          <div class="actions">
+            <a class="btn primary" href="https://darshan90226.github.io/uidrop/" target="_blank" rel="noopener noreferrer">Live demo</a>
+            <a class="btn" href="https://github.com/darshan90226/uidrop" target="_blank" rel="noopener noreferrer">Source code</a>
+          </div>
+          <p class="note">The API runs on a free plan, so the first load can take a few seconds while it wakes up.</p>
+        </article>
+
+        <h3 class="more-title">More projects</h3>
+
+        <article class="project">
+          <h3>UIDrop Gallery</h3>
+          <div class="links">
+            <a href="https://darshan90226.github.io/uidrop-gallery/" target="_blank" rel="noopener noreferrer">Live demo</a>
+            <a href="https://github.com/darshan90226/uidrop-gallery" target="_blank" rel="noopener noreferrer">Source code</a>
+          </div>
+          <p>An open-source gallery of copy-paste HTML and CSS snippets with live sandboxed previews, filters and search. A Node.js script validates every contribution in CI before it is published.</p>
+          <ul class="chips"><li>JavaScript</li><li>Vite</li><li>Node.js</li><li>GitHub Actions</li></ul>
+        </article>
+
+        <article class="project">
+          <h3>Spotify-inspired music interface</h3>
+          <div class="links">
+            <a href="https://darshan90226.github.io/SPOTIFY-CLONE/" target="_blank" rel="noopener noreferrer">Live demo</a>
+          </div>
+          <p>A music player interface with play and pause controls, song selection and a playback progress bar, built with JavaScript event handling.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        </article>
+
+        <article class="project">
+          <h3>Photography page</h3>
+          <div class="links">
+            <a href="https://darshan90226.github.io/Photography_page/" target="_blank" rel="noopener noreferrer">Live demo</a>
+          </div>
+          <p>A responsive photography showcase built to practise layout and visual design.</p>
+          <ul class="chips"><li>HTML</li><li>CSS</li></ul>
+        </article>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Get in touch</h2>
+        <p>I’m open to entry-level Software and Web Developer roles, and happy to talk about my projects or hear your feedback.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:darshantha2004@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/darshan-thakare/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/darshan90226" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://x.com/Darshan27037383" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Darshan Thakare</div>
+  </footer>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Darshan | Portfolio</title>
   <style>
     * {
@@ -169,4 +464,4 @@ a:focus {
   </section>
 
 </body>
-</html>
+</html> -->
